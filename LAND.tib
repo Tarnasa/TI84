@@ -22,8 +22,8 @@ P->Q
 pxl-Test(K*Q,L*P)->G
 If RandInt(0,C:Then
 RandInt(0,4)->A
-If A=0:Then:pxl-Test(K*Q+Q,32),L*P)->H:End
-If A=1:Then:pxl-Test(K*Q,L*P+P,32))->H:End
+If A=0:Then:pxl-Test(min(K*Q+Q,32),L*P)->H:End
+If A=1:Then:pxl-Test(K*Q,min(L*P+P,32))->H:End
 If A=2:Then:pxl-Test(max(K*Q-Q,0),L*P)->H:End
 If A=3:Then:pxl-Test(K*Q,max(L*P-P,0))->H:End
 If A=4:Then:G->H:End

@@ -22,12 +22,12 @@ If not(U:Then
 100->U:End
 0->Z
 If A<T:O
-M*S*T-A,B-A)->Z
+M*S*min(T-A,B-A)->Z
 If B>=T:Then
 Z+(M*F)->Z
 End:End
 If A<U:Then
-Z+(M*L*U-max(A,T),B-max(A,T)))->Z
+Z+(M*L*min(U-max(A,T),B-max(A,T)))->Z
 If B>=U:Then
 Z+(M*V)->Z
 End:End
