@@ -1,0 +1,13 @@
+Input "?X:",C
+Input "(X+",A
+Input "^:",B
+ClrDraw
+If B<0:Then
+[neg]B->B
+Input "LINE:",D
+Text(1,1,D,": X^",B-D,"*Y^",D,"*",(A^D)*(C^(B-D))*(BnCr(B-D))
+Else
+For(I,0,B
+Text(I*6,1,I,": X^",B-I,"*",(A^I)*(C^(B-I))*(BnCr(B-I))
+End
+End

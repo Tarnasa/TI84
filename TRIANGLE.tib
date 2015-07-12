@@ -1,0 +1,70 @@
+Label 0
+ClrDraw
+ClrHome
+0->A:0->B:0->C:0->D:0->E:0->F:0->G:0->H:0->I:0->J:
+Disp "0-QUIT","1-AAS","2-ASS","3-ASA","4-SAS","5-SSS"
+Input ":",[theta]
+If [theta]=1:Then
+Goto 1:End
+If [theta]=2:Then
+Goto 2:End
+If [theta]=3:Then
+Goto 3:End
+If [theta]=4:Then
+Goto 4:End
+If [theta]=5:Then
+Goto 5:End
+Goto 66
+Label 1:End
+Input "[box]A:",A
+Input "[box]B:",B
+Input "SA:",D
+180-A-B->C
+Dsin(B)/sin(A)->E
+Dsin(C)/sin(A)->F
+Goto 9
+Label 2:End
+Input "[box]A:",A
+Input "SA:",D
+Input "SB:",E
+asin(Esin(A)/D)->B:180-A-B->C
+Esin(A)->H
+Dsin(C)/sin(A)->F
+If A<90:Then
+If (H<D)*(D<E):Then:180-B->G:180-G-A->I:Dsin(I)/sin(A)->J
+Goto 10:End:End
+If A>90andD<=E:Then:0->F:0->B:End
+Goto 9
+Label 3
+End
+Input "[box]A:",A
+Input "SB:",E
+Input "[box]C:",C
+180-A-C->B
+Esin(C)/sin(B)->F
+Esin(A)/sin(B)->D
+Goto 9
+Label 4
+End
+Input "SB:",E
+Input "[box]A:",A
+Input "SC:",F
+[root]^2E^2+F^2-2EFcos(A))->D
+asin(Esin(A)/D)->B
+asin(Fsin(A)/D)->C
+Goto 9
+Label 5
+Input "SA:",D
+Input "SB:",E
+Input "SC:",F
+acos((D^2-E^2-F^2)/([neg]2EF))->A
+acos((E^2-D^2-F^2)/([neg]2DF))->B
+acos((F^2-E^2-D^2)/([neg]2DE))->C
+Goto 9
+Label 9
+Text(1,1,"[box]A: ",A:Text(7,1,"[box]B: ",B:Text(13,1,"[box]C: ",C:Text(19,1,"SA: ",D:Text(25,1,"SB: ",E:Text(31,1,"SC: ",F)
+Goto 66
+Label 10
+End:End
+Text(37,1,"[box]B2: ",G:Text(43,1,"[box]C2: ",I:Text(49,1,"SC2: ",J:Goto 9
+Label 66

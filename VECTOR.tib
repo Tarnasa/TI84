@@ -1,0 +1,61 @@
+Label 0
+FnOff 
+CoordOn
+AxesOn
+ZDecimal
+ClrDraw
+ClrHome
+Disp "0=QUIT","1=COMP","2=MA DR","3=MA AD","4=C NO"
+Input ":",[theta]
+If [theta]=1:Then
+Goto 1:End
+If [theta]=2:Then
+Goto 2:End
+If [theta]=3:Then
+Goto 3:End
+If [theta]=4:Then
+Goto 4:End
+Goto 66
+Label 1
+End
+Input "X:",X
+Input "Y:",S
+[root]^2X^2+S^2)->M
+acos(X/M)->D
+If S<0:Then
+360-D->D:End
+Goto 9
+
+End
+Input "M:",M
+Input "D:",D
+Mcos(D)->X
+Msin(D)->S
+Goto 9
+Label 3
+Input "M1:",A
+Input "D1:",B
+Input "M2:",C
+Input "D2:",D
+Acos(B)+Ccos(D)->X
+Asin(B)+Csin(D)->S
+[root]^2X^2+S^2)->M
+acos(X/M)->D
+If S<0:Then
+360-D->D:End
+Goto 9
+Label 4
+Input "X:",X
+Input "Y:",S
+[root]^2X^2+S^2)->M
+0->D
+X/M->X
+S/M->S
+Goto 9
+Label 9
+Text(1,1,"X: ",X:Text(7,1,"Y: ",S:Text(13,1,"M: ",M:Text(19,1,"D: ",D:
+Line(0,0,X,S)
+Goto 66
+Label 10
+Goto 9
+Label 66

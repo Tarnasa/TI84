@@ -1,0 +1,37 @@
+Input "M:",M
+Input "INIT T:",A
+Input "FINAL T:",B
+Input "SOL C[p]:",S
+Input "LIQ C[p]:",L
+Input "GAS C[p]:",G
+Input "E FUS:",F
+Input "E VAP:",V
+Input "T MEL:",T
+Input "T BOI:",U
+If not(S:Then
+.51->S:End
+If not(L:Then
+1->L:End
+If not(G:Then
+.48->G:End
+If not(F:Then
+80.87->F:End
+If not(V:Then
+547.2->V:End
+If not(U:Then
+100->U:End
+0->Z
+If A<T:O
+M*S*T-A,B-A)->Z
+If B>=T:Then
+Z+(M*F)->Z
+End:End
+If A<U:Then
+Z+(M*L*U-max(A,T),B-max(A,T)))->Z
+If B>=U:Then
+Z+(M*V)->Z
+End:End
+If B>U:Then
+Z+(M*G*(B-max(A,U)))->Z
+End
+Z

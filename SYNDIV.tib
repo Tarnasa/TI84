@@ -1,0 +1,21 @@
+Input "FAC:",F
+Disp "USING DATA FROM L1"
+{0}->[list]SY
+Repeat (dim(L1
+augment({0},[list]SY)->[list]SY:End
+For(I,1,dim(L1
+L1(I)+[list]SY(I)->[list]SY(I+1):End
+Disp [list]SY
+FnOff 
+ZoomRcl
+ClrDraw
+Horizontal 50
+For(I,1,7
+Vertical I*14
+End
+For(I,1,dim(L1
+Text(2,2+14I,L(I)
+Text(32,2+14I,[list]SY(I+1)
+Text(16,2+14I,[list]SY(I+1)-L1(I)
+End
+Text(2,4,F

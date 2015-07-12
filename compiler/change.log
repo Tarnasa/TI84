@@ -1,0 +1,12 @@
+Changes for Version 1.2:
+
+- Finished token lists
+
+Changes for Version 1.1:
+
+- Changes to parser means more similar syntax to calculator
+	+ Colons are now directly supported, instead of '[colon]'
+	+ Colons are not necessary as the first character of each line anymore
+- Decompilation support
+	+ '-d' switch, requires '8xp' file as input
+- Memory leak in initialization fixed

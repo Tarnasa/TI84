@@ -1,0 +1,33 @@
+Input "SIM:",C
+Input "MULT:",D
+ZoomRcl
+FnOff 
+GridOff
+AxesOff
+ClrDraw
+For(J,0,15)
+For(I,0,15)
+Pxl-On(I,J)
+Pxl-Off(I+16,J
+Pxl-On(I+16,J+16)
+Pxl-Off(I,J+16
+End:End
+
+
+For(N,2,5)
+For(K,0,2^N-1)
+For(L,0,2^N-1)
+32/(2^(N->P
+P->Q
+pxl-Test(K*Q,L*P)->G
+If RandInt(0,C:Then
+RandInt(0,4)->A
+If A=0:Then:pxl-Test(K*Q+Q,32),L*P)->H:End
+If A=1:Then:pxl-Test(K*Q,L*P+P,32))->H:End
+If A=2:Then:pxl-Test(max(K*Q-Q,0),L*P)->H:End
+If A=3:Then:pxl-Test(K*Q,max(L*P-P,0))->H:End
+If A=4:Then:G->H:End
+Else:1-G->H:End
+If G!=H:Then
+For(J,L*Q,L*Q+Q-1):For(I,K*P,K*P+P-1)
+Pxl-Change(J,I):End:End:End:End:End:C*D->C:End

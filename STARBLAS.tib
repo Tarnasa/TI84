@@ -1,0 +1,81 @@
+Disp "  STAR BLASTER",""," PRESS TO START"
+{52.30}->[list]S
+[list]S->[list]S2
+30->P
+0->T
+0->U
+0->V
+getKey
+getKey->X
+FnOff 
+0->Xmin
+0->Ymin
+1->delta_X
+1->delta_Y
+ClrDraw
+While 1
+T+1->T
+For(I,1,dim([list]S2
+Pt-Off(fPart([list]S2(I));2,iPart([list]S2(I)),2
+End
+For(I,1,dim([list]S
+Pt-On(fPart([list]S(I));2,iPart([list]S(I)),2
+End
+[list]S->[list]S2
+0->D
+For(I,1,dim([list]S
+iPart([list]S(I))-10+fPart([list]S(I->[list]S(I)
+If [list]S(I)<=12:Then:D+1->D:End:End
+For(I,1,D
+If fPart([list]S(1))=.99:Then:V+1->V:End
+If dim([list]S!=1:Then
+delta_List(cumSum([list]S->[list]S
+End
+End
+RandInt(1,iPart(T/10->J
+For(D,1,J
+52+sub(RandInt(1,5)*15->X
+X->[list]S(1+dim([list]S
+U+1->U
+End
+
+End
+For(A,0,10)
+getKey->K
+If K=45:Then:Goto 6
+Else:If K=24:Then:P->Q
+max(P-15,15->P
+Else:If K=26:Then:P->Q
+min(P+15,75->P
+Else:If K=25:Then:
+For(B,10,53,2
+Pxl-Change(B,P
+End
+For(I,1,dim([list]S
+If fPart([list]S(I));2=P:Then
+Pt-Off(fPart([list]S(I));2,iPart([list]S(I)),2
+iPart([list]S(I))+.99->[list]S(I)
+End
+End
+For(B,10,53,2
+Pxl-Change(B,P
+End
+End
+End
+End
+End
+If Q:Then
+Pt-Off(Q,4,2
+Pt-Off(Q,7,3
+Pt-On(P,4,2
+Pt-On(P,7,3
+End
+End
+End
+Label 6
+ClrDraw
+DelVar [list]S
+ClrHome
+Disp "TIME:",T
+Disp "STAR:",U
+Disp "KILL:",V

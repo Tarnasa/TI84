@@ -1,0 +1,30 @@
+47->X
+31->Y
+0->K
+While K!=105
+getKey->K
+X-(K=24)+(K=26)->X
+Y-(K=25)+(K=34)->Y
+Pxl-On(Y,X
+End
+Label 9
+ClrDraw
+0->K
+45->X
+31->Y
+While K!=105
+getKey->K
+RandInt([neg]1,1->A
+RandInt([neg]1,1->B
+min(93,max(1,X+A->X
+min(61,max(1,Y+B->Y
+Pxl-Change(Y,X
+Pxl-Change(62-Y,94-X
+Pxl-Change(62-Y,X
+Pxl-Change(Y,94-X
+End
+getKey
+getKey->K
+If K=105:Then
+Goto 9
+End

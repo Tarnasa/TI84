@@ -1,0 +1,11 @@
+Input "RAD:",R
+1->C:1->I
+iPart([root]^2R))->M
+For(I,2,(M))
+If fPart(R/(I)^2)=0:Then
+R/I^2->R
+C*I->C
+End
+End
+Disp "COEF:",C
+Disp "RAD:",R
